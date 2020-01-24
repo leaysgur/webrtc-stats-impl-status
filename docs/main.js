@@ -1,4 +1,4 @@
-import { fetchTurnServers } from "./utils.js";
+import { fetchTurnServers, reportTypeCount } from "./utils.js";
 
 (async () => {
   const [$setup, $dump] = document.querySelectorAll("button");
@@ -10,7 +10,7 @@ import { fetchTurnServers } from "./utils.js";
     pc1 = new RTCPeerConnection({ iceServers, iceTransportPolicy: "relay" });
 
     iceServers = await fetchTurnServers(window.Peer);
-    const pc2 = new RTCPeerConnection({ iceServers, iceTransportPolicy: "relay" });
+    const pc2 = new RTCPeerConnection({ iceServers, iceTransportPolicy: "all" });
 
     pc1.onicecandidate = ev => ev.candidate && pc2.addIceCandidate(ev.candidate);
     pc2.onicecandidate = ev => ev.candidate && pc1.addIceCandidate(ev.candidate);
@@ -36,10 +36,15 @@ import { fetchTurnServers } from "./utils.js";
 
     const offer = await pc1.createOffer();
     await pc1.setLocalDescription(offer);
+
     await pc2.setRemoteDescription(offer);
     const answer = await pc2.createAnswer();
     await pc2.setLocalDescription(answer);
+
     await pc1.setRemoteDescription(answer);
+
+    console.log("ANSWER");
+    console.log(answer.sdp);
   };
 
   $dump.onclick = async () => {
@@ -47,6 +52,7 @@ import { fetchTurnServers } from "./utils.js";
 
     const stats = await pc1.getStats();
     console.log(stats);
+    console.log(reportTypeCount(stats));
 
     $textarea.textContent = JSON.stringify([...stats.values()], null, 2);
   };
