@@ -4,7 +4,7 @@ const arrayToMarkdownTable = arr => {
     ["", ...head, ""],
   ];
 
-  tokens.push(["", ":---", ...new Array(head.length - 1).fill().map(() => ":--:"), ""]);
+  tokens.push(["", "--:", ...new Array(head.length - 1).fill().map(() => ":--:"), ""]);
 
   for (const item of body) {
     const [type, ...rest] = item;
