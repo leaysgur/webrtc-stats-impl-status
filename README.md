@@ -1,23 +1,27 @@
-# webrtc-stats-impl-stats
+# webrtc-stats-impl-status
 
 > https://w3c.github.io/webrtc-stats/
+
+This repository lists current WebRTC stats implementaion status for latest browser versions.
 
 ## Settings
 
 - pc1: send+recv 1 video, 1 audio, and 1 datachannel w/  TURN
 - pc2: send+recv 1 video, 1 audio, and 1 datachannel w/o TURN
 
-See ./docs/main.js for details.
+See [./docs/main.js](./docs/main.js) for details.
 
 ## Notes
 
-- some of stats report has specific props in the same type
+- Some of stats report has specific props in the same type
   - e.g. `inbound-rtp` w/ `kind` = `audio` and `kind` = `video` have different props
+- Type `track` is obslete stats
+  - will be `sender`, `receiver` stats
 
 ## RTCStatsType
 
 |  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| ---: | :--: | :--: | :--: | :--: |
+| :--- | :--: | :--: | :--: | :--: |
 | transport | ✅ | ✅ |  | ✅ |
 | stream | ✅ | ✅ |  |  |
 | track | ✅ | ✅ |  | ✅ |
@@ -36,12 +40,10 @@ See ./docs/main.js for details.
 
 ## Details
 
-
-
 ### transport
 
 |  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| ---: | :--: | :--: | :--: | :--: |
+| :--- | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ |  | ✅ |
 | type | ✅ | ✅ |  | ✅ |
 | dtlsState | ✅ | ✅ |  |  |
@@ -56,7 +58,7 @@ See ./docs/main.js for details.
 ### stream
 
 |  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| ---: | :--: | :--: | :--: | :--: |
+| :--- | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ |  |  |
 | type | ✅ | ✅ |  |  |
 | trackIds | ✅ | ✅ |  |  |
@@ -66,7 +68,7 @@ See ./docs/main.js for details.
 ### track
 
 |  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| ---: | :--: | :--: | :--: | :--: |
+| :--- | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ |  | ✅ |
 | kind | ✅ | ✅ |  |  |
 | type | ✅ | ✅ |  | ✅ |
@@ -100,7 +102,7 @@ See ./docs/main.js for details.
 ### codec
 
 |  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| ---: | :--: | :--: | :--: | :--: |
+| :--- | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ |  | ✅ |
 | type | ✅ | ✅ |  | ✅ |
 | mimeType | ✅ | ✅ |  | ✅ |
@@ -111,7 +113,7 @@ See ./docs/main.js for details.
 ### certificate
 
 |  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| ---: | :--: | :--: | :--: | :--: |
+| :--- | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ |  | ✅ |
 | type | ✅ | ✅ |  | ✅ |
 | timestamp | ✅ | ✅ |  | ✅ |
@@ -122,7 +124,7 @@ See ./docs/main.js for details.
 ### media-source
 
 |  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| ---: | :--: | :--: | :--: | :--: |
+| :--- | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ |  |  |
 | kind | ✅ | ✅ |  |  |
 | type | ✅ | ✅ |  |  |
@@ -138,7 +140,7 @@ See ./docs/main.js for details.
 ### data-channel
 
 |  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| ---: | :--: | :--: | :--: | :--: |
+| :--- | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ |  | ✅ |
 | type | ✅ | ✅ |  | ✅ |
 | state | ✅ | ✅ |  | ✅ |
@@ -154,7 +156,7 @@ See ./docs/main.js for details.
 ### candidate-pair
 
 |  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| ---: | :--: | :--: | :--: | :--: |
+| :--- | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ | ✅ | ✅ |
 | type | ✅ | ✅ | ✅ | ✅ |
 | state | ✅ | ✅ | ✅ | ✅ |
@@ -183,7 +185,7 @@ See ./docs/main.js for details.
 ### local-candidate
 
 |  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| ---: | :--: | :--: | :--: | :--: |
+| :--- | :--: | :--: | :--: | :--: |
 | ip | ✅ | ✅ |  |  |
 | id | ✅ | ✅ | ✅ | ✅ |
 | port | ✅ | ✅ | ✅ | ✅ |
@@ -202,7 +204,7 @@ See ./docs/main.js for details.
 ### remote-candidate
 
 |  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| ---: | :--: | :--: | :--: | :--: |
+| :--- | :--: | :--: | :--: | :--: |
 | ip | ✅ | ✅ |  |  |
 | id | ✅ | ✅ | ✅ | ✅ |
 | port | ✅ | ✅ | ✅ | ✅ |
@@ -219,7 +221,7 @@ See ./docs/main.js for details.
 ### inbound-rtp
 
 |  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| ---: | :--: | :--: | :--: | :--: |
+| :--- | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ | ✅ | ✅ |
 | kind | ✅ | ✅ | ✅ |  |
 | ssrc | ✅ | ✅ | ✅ | ✅ |
@@ -255,7 +257,7 @@ See ./docs/main.js for details.
 ### outbound-rtp
 
 |  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| ---: | :--: | :--: | :--: | :--: |
+| :--- | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ | ✅ | ✅ |
 | kind | ✅ | ✅ | ✅ |  |
 | ssrc | ✅ | ✅ | ✅ | ✅ |
@@ -294,7 +296,7 @@ See ./docs/main.js for details.
 ### peer-connection
 
 |  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| ---: | :--: | :--: | :--: | :--: |
+| :--- | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ |  | ✅ |
 | type | ✅ | ✅ |  | ✅ |
 | timestamp | ✅ | ✅ |  | ✅ |
@@ -304,7 +306,7 @@ See ./docs/main.js for details.
 ### remote-inbound-rtp
 
 |  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| ---: | :--: | :--: | :--: | :--: |
+| :--- | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ | ✅ |  |
 | kind | ✅ | ✅ | ✅ |  |
 | ssrc | ✅ | ✅ | ✅ |  |
@@ -323,7 +325,7 @@ See ./docs/main.js for details.
 ### remote-outbound-rtp
 
 |  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| ---: | :--: | :--: | :--: | :--: |
+| :--- | :--: | :--: | :--: | :--: |
 | id |  |  | ✅ |  |
 | ssrc |  |  | ✅ |  |
 | kind |  |  | ✅ |  |
