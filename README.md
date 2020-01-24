@@ -14,6 +14,7 @@ See [./docs/main.js](./docs/main.js) for details.
 ## Notes
 
 - ✅ means that `key` exists in the report
+- There are much more stats types in the spec
 - Some of stats report has specific props in the same type
   - e.g. `inbound-rtp` w/ `kind` = `audio` and `kind` = `video` have different props
 - Type `track` is obslete stats
