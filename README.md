@@ -21,7 +21,7 @@ See [./docs/main.js](./docs/main.js) for details.
 
 ## RTCStatsType
 
-|  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
+|  | chrome v80 | edge v80 | firefox v73 | safari v13.0.5 |
 | --: | :--: | :--: | :--: | :--: |
 | transport | ✅ | ✅ |  | ✅ |
 | stream | ✅ | ✅ |  |  |
@@ -31,8 +31,8 @@ See [./docs/main.js](./docs/main.js) for details.
 | media-source | ✅ | ✅ |  |  |
 | data-channel | ✅ | ✅ |  | ✅ |
 | candidate-pair | ✅ | ✅ | ✅ | ✅ |
-| local-candidate | ✅ | ✅ | ✅ | ✅ |
 | remote-candidate | ✅ | ✅ | ✅ | ✅ |
+| local-candidate | ✅ | ✅ | ✅ | ✅ |
 | inbound-rtp | ✅ | ✅ | ✅ | ✅ |
 | outbound-rtp | ✅ | ✅ | ✅ | ✅ |
 | peer-connection | ✅ | ✅ |  | ✅ |
@@ -43,13 +43,16 @@ See [./docs/main.js](./docs/main.js) for details.
 
 ### transport
 
-|  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
+|  | chrome v80 | edge v80 | firefox v73 | safari v13.0.5 |
 | --: | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ |  | ✅ |
 | type | ✅ | ✅ |  | ✅ |
 | dtlsState | ✅ | ✅ |  |  |
 | bytesSent | ✅ | ✅ |  | ✅ |
 | timestamp | ✅ | ✅ |  | ✅ |
+| srtpCipher | ✅ | ✅ |  |  |
+| dtlsCipher | ✅ | ✅ |  |  |
+| tlsVersion | ✅ | ✅ |  |  |
 | bytesReceived | ✅ | ✅ |  | ✅ |
 | localCertificateId | ✅ | ✅ |  | ✅ |
 | remoteCertificateId | ✅ | ✅ |  | ✅ |
@@ -58,7 +61,7 @@ See [./docs/main.js](./docs/main.js) for details.
 
 ### stream
 
-|  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
+|  | chrome v80 | edge v80 | firefox v73 | safari v13.0.5 |
 | --: | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ |  |  |
 | type | ✅ | ✅ |  |  |
@@ -68,7 +71,7 @@ See [./docs/main.js](./docs/main.js) for details.
 
 ### track
 
-|  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
+|  | chrome v80 | edge v80 | firefox v73 | safari v13.0.5 |
 | --: | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ |  | ✅ |
 | kind | ✅ | ✅ |  |  |
@@ -102,7 +105,7 @@ See [./docs/main.js](./docs/main.js) for details.
 
 ### codec
 
-|  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
+|  | chrome v80 | edge v80 | firefox v73 | safari v13.0.5 |
 | --: | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ |  | ✅ |
 | type | ✅ | ✅ |  | ✅ |
@@ -113,7 +116,7 @@ See [./docs/main.js](./docs/main.js) for details.
 
 ### certificate
 
-|  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
+|  | chrome v80 | edge v80 | firefox v73 | safari v13.0.5 |
 | --: | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ |  | ✅ |
 | type | ✅ | ✅ |  | ✅ |
@@ -124,7 +127,7 @@ See [./docs/main.js](./docs/main.js) for details.
 
 ### media-source
 
-|  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
+|  | chrome v80 | edge v80 | firefox v73 | safari v13.0.5 |
 | --: | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ |  |  |
 | kind | ✅ | ✅ |  |  |
@@ -140,7 +143,7 @@ See [./docs/main.js](./docs/main.js) for details.
 
 ### data-channel
 
-|  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
+|  | chrome v80 | edge v80 | firefox v73 | safari v13.0.5 |
 | --: | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ |  | ✅ |
 | type | ✅ | ✅ |  | ✅ |
@@ -156,7 +159,7 @@ See [./docs/main.js](./docs/main.js) for details.
 
 ### candidate-pair
 
-|  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
+|  | chrome v80 | edge v80 | firefox v73 | safari v13.0.5 |
 | --: | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ | ✅ | ✅ |
 | type | ✅ | ✅ | ✅ | ✅ |
@@ -183,9 +186,26 @@ See [./docs/main.js](./docs/main.js) for details.
 | availableOutgoingBitrate | ✅ | ✅ |  | ✅ |
 | lastPacketReceivedTimestamp |  |  | ✅ |  |
 
+### remote-candidate
+
+|  | chrome v80 | edge v80 | firefox v73 | safari v13.0.5 |
+| --: | :--: | :--: | :--: | :--: |
+| ip | ✅ | ✅ |  |  |
+| id | ✅ | ✅ | ✅ | ✅ |
+| port | ✅ | ✅ | ✅ | ✅ |
+| type | ✅ | ✅ | ✅ | ✅ |
+| address |  |  | ✅ |  |
+| deleted | ✅ | ✅ |  | ✅ |
+| priority | ✅ | ✅ | ✅ | ✅ |
+| protocol | ✅ | ✅ | ✅ | ✅ |
+| isRemote | ✅ | ✅ |  |  |
+| timestamp | ✅ | ✅ | ✅ | ✅ |
+| transportId | ✅ | ✅ |  | ✅ |
+| candidateType | ✅ | ✅ | ✅ | ✅ |
+
 ### local-candidate
 
-|  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
+|  | chrome v80 | edge v80 | firefox v73 | safari v13.0.5 |
 | --: | :--: | :--: | :--: | :--: |
 | ip | ✅ | ✅ |  |  |
 | id | ✅ | ✅ | ✅ | ✅ |
@@ -202,26 +222,9 @@ See [./docs/main.js](./docs/main.js) for details.
 | candidateType | ✅ | ✅ | ✅ | ✅ |
 | relayProtocol | ✅ | ✅ | ✅ |  |
 
-### remote-candidate
-
-|  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
-| --: | :--: | :--: | :--: | :--: |
-| ip | ✅ | ✅ |  |  |
-| id | ✅ | ✅ | ✅ | ✅ |
-| port | ✅ | ✅ | ✅ | ✅ |
-| type | ✅ | ✅ | ✅ | ✅ |
-| address |  |  | ✅ |  |
-| deleted | ✅ | ✅ |  | ✅ |
-| priority | ✅ | ✅ | ✅ | ✅ |
-| protocol | ✅ | ✅ | ✅ | ✅ |
-| isRemote | ✅ | ✅ |  |  |
-| timestamp | ✅ | ✅ | ✅ | ✅ |
-| transportId | ✅ | ✅ |  | ✅ |
-| candidateType | ✅ | ✅ | ✅ | ✅ |
-
 ### inbound-rtp
 
-|  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
+|  | chrome v80 | edge v80 | firefox v73 | safari v13.0.5 |
 | --: | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ | ✅ | ✅ |
 | kind | ✅ | ✅ | ✅ |  |
@@ -252,12 +255,14 @@ See [./docs/main.js](./docs/main.js) for details.
 | discardedPackets |  |  | ✅ |  |
 | keyFramesDecoded | ✅ | ✅ |  |  |
 | headerBytesReceived | ✅ | ✅ |  |  |
+| totalInterFrameDelay | ✅ | ✅ |  |  |
 | decoderImplementation | ✅ | ✅ |  |  |
+| totalSquaredInterFrameDelay | ✅ | ✅ |  |  |
 | lastPacketReceivedTimestamp | ✅ | ✅ |  |  |
 
 ### outbound-rtp
 
-|  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
+|  | chrome v80 | edge v80 | firefox v73 | safari v13.0.5 |
 | --: | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ | ✅ | ✅ |
 | kind | ✅ | ✅ | ✅ |  |
@@ -296,7 +301,7 @@ See [./docs/main.js](./docs/main.js) for details.
 
 ### peer-connection
 
-|  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
+|  | chrome v80 | edge v80 | firefox v73 | safari v13.0.5 |
 | --: | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ |  | ✅ |
 | type | ✅ | ✅ |  | ✅ |
@@ -306,7 +311,7 @@ See [./docs/main.js](./docs/main.js) for details.
 
 ### remote-inbound-rtp
 
-|  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
+|  | chrome v80 | edge v80 | firefox v73 | safari v13.0.5 |
 | --: | :--: | :--: | :--: | :--: |
 | id | ✅ | ✅ | ✅ |  |
 | kind | ✅ | ✅ | ✅ |  |
@@ -325,7 +330,7 @@ See [./docs/main.js](./docs/main.js) for details.
 
 ### remote-outbound-rtp
 
-|  | chrome v79 | edge v79 | firefox v72 | safari v13.0.4 |
+|  | chrome v80 | edge v80 | firefox v73 | safari v13.0.5 |
 | --: | :--: | :--: | :--: | :--: |
 | id |  |  | ✅ |  |
 | ssrc |  |  | ✅ |  |
@@ -336,5 +341,3 @@ See [./docs/main.js](./docs/main.js) for details.
 | mediaType |  |  | ✅ |  |
 | timestamp |  |  | ✅ |  |
 | packetsSent |  |  | ✅ |  |
-
-
