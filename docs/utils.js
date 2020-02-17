@@ -1,7 +1,7 @@
 // use SkyWay just for TURN servers
 export async function fetchTurnServers(Peer) {
   const peer = new Peer({
-    key: "03ff6219-b58f-4310-9484-e9108e859cdd"
+    key: "c7d70e97-0033-4a4d-a1aa-28625ad4b1d9"
   });
   const credentials = await new Promise(r => {
     // not public but
