@@ -1,8 +1,10 @@
-import { fetchTurnServers, reportTypeCount } from "./utils.js";
+import { fetchTurnServers, getMediaStream, reportTypeCount } from "./utils.js";
 
 (async () => {
   const [$setup, $dump] = document.querySelectorAll("button");
   const [$textarea] = document.querySelectorAll("textarea");
+
+  console.log(navigator.userAgent);
 
   let pc1 = null;
   $setup.onclick = async () => {
@@ -25,7 +27,7 @@ import { fetchTurnServers, reportTypeCount } from "./utils.js";
     };
     pc1.ondatachannel = ev => console.log("pc1:ondatachannel", ev.channel);
 
-    const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+    const stream = await getMediaStream();
     for (const track of stream.getTracks()) {
       pc1.addTrack(track, stream);
       pc2.addTrack(track, stream);

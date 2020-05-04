@@ -17,6 +17,14 @@ export async function fetchTurnServers(Peer) {
   ].map(urls => ({ urls, ...credentials }));
 }
 
+export async function getMediaStream() {
+  const tracks = await Promise.all([
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(s => s.getAudioTracks()[0]),
+    navigator.mediaDevices.getDisplayMedia({ video: true }).then(s => s.getVideoTracks()[0])
+  ]);
+  return new MediaStream(tracks);
+}
+
 export function reportTypeCount(stats) {
   const map = new Map();
   for (const report of stats.values()) {
